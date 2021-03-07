@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<!--light-->
+    <color name="light_primary">#FF6200EE</color>
+    <color name="light_primary_dark">#A1A1A1</color>
+    <color name="light_accent">#1B0045</color>
+<!--dark-->
+    <color name="dark_primary">#1B0045</color>
+    <color name="dark_primary_dark">#0C001E</color>
+    <color name="dark_accent">#E0E800</color>
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
