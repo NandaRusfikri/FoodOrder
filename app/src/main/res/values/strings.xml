@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">FoodOrder</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="categories_first">Movies</string>
+    <string name="categories_second">Events</string>
+    <string name="categories_third">Tickets</string>
+    <string name="todo">TODO</string>
+
+    <string-array name="category">
+        <item>Coffee</item>
+        <item>Non Coffee</item>
+        <item>Snack</item>
+    </string-array>
 </resources>

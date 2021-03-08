@@ -12,5 +12,7 @@ class Constants {
         const val RESPONSE_CREATED = 201
         const val RESPONSE_SUCCESS = 200
         const val RESPONSE_ERROR = 400
+
+        const val ARG_OBJECT = "object"
     }
 }

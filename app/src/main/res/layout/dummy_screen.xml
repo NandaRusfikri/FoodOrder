@@ -10,19 +10,17 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:textColor="@android:color/holo_blue_bright"
         android:textSize="32sp"
         tools:text="item" />
 
-
-    <Button
-        android:id="@+id/btnToggle"
-        android:visibility="gone"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMenuCategories"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Toggle Orientation" />
+        android:layout_margin="16dp"
+        android:layout_below="@id/tvTitle"/>
 
 </RelativeLayout>
