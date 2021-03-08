@@ -18,5 +18,9 @@
         android:id="@+id/detailItemFragment"
         android:name="com.projectpro.foodorder.ui.DetailItemFragment"
         android:label="fragment_detail_item"
-        tools:layout="@layout/fragment_detail_item" />
+        tools:layout="@layout/fragment_detail_item" >
+        <argument
+            android:name="menu_detail"
+            app:argType="com.projectpro.foodorder.data.remote.model.MenusItem" />
+    </fragment>
 </navigation>
