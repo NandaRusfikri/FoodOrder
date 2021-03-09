@@ -6,11 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelStore
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.projectpro.foodorder.R
 import com.projectpro.foodorder.adapter.DummyCollectionAdapter
 import com.projectpro.foodorder.databinding.FragmentHomeBinding
+import com.projectpro.foodorder.utils.ViewModelFactory
+import com.projectpro.foodorder.viewmodel.HomeViewModel
 
 
 /**
@@ -23,6 +29,11 @@ class FragmentHome : Fragment(R.layout.fragment_home) {
     private val bind get() = _binding!!
 
     private lateinit var dummyCollectionAdapter: DummyCollectionAdapter
+
+    private val homeViewModel by lazy {
+        val viewModelFactory = activity?.application?.let { ViewModelFactory.getInstance() }
+        viewModelFactory?.let { ViewModelProvider(this, it).get(HomeViewModel::class.java) }
+    }
 
     // tab titles
     private val titles = arrayOf(
@@ -43,6 +54,9 @@ class FragmentHome : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        if (savedInstanceState == null) {
+            checkConnectionDb()
+        }
 
         val vp2 = bind.screenRootVP2
         val tab = bind.tabLayout
@@ -59,6 +73,17 @@ class FragmentHome : Fragment(R.layout.fragment_home) {
             tab.text = titles[position]
         }.attach()
 
+    }
+
+    private fun checkConnectionDb() {
+        bind.pbLoadCheckConn.visibility = View.VISIBLE
+        bind.screenRootVP2.visibility = View.INVISIBLE
+        bind.tabLayout.visibility = View.INVISIBLE
+        homeViewModel?.checkHealthCheck?.observe(viewLifecycleOwner, {
+            bind.pbLoadCheckConn.visibility = View.GONE
+            bind.screenRootVP2.visibility = View.VISIBLE
+            bind.tabLayout.visibility = View.VISIBLE
+        })
     }
 
     override fun onDestroyView() {

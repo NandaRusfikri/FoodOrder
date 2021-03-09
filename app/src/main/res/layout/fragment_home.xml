@@ -17,6 +17,16 @@
             app:layout_constraintTop_toTopOf="parent"
             layout="@layout/app_bar_component"/>
 
+        <ProgressBar
+            android:id="@+id/pbLoadCheckConn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
