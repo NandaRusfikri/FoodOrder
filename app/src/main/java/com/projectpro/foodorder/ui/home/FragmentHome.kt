@@ -67,7 +67,7 @@ class FragmentHome : Fragment(R.layout.fragment_home) {
         dummyCollectionAdapter = DummyCollectionAdapter(this)
         vp2.apply {
             adapter = dummyCollectionAdapter
-            orientation = ViewPager2.ORIENTATION_VERTICAL
+            orientation = ViewPager2.ORIENTATION_HORIZONTAL
         }
         TabLayoutMediator(tab, vp2) { tab, position ->
             tab.text = titles[position]

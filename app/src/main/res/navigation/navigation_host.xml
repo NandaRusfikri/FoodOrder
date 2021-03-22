@@ -21,7 +21,7 @@
         tools:layout="@layout/fragment_detail_item" >
         <argument
             android:name="menu_detail"
-            app:argType="com.projectpro.foodorder.data.remote.model.MenusItem" />
+            app:argType="com.projectpro.foodorder.data.remote.model.Menus" />
     </fragment>
     <fragment
         android:id="@+id/fragmentOrder"
